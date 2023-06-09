@@ -1,6 +1,6 @@
 name: 🐛 Bug Report
 description: Report a bug in the project
-title: "Bug:"
+title: "🐛 Bug:"
 labels: ["🐛 Bug fix", "👀 status: awaiting review"]
 body:
   - type: textarea
