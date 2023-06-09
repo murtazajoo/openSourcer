@@ -27,7 +27,7 @@ Contributions are welcome! If you have any ideas, suggestions, or bug fixes, ple
 
 > **Warning**: Please do not spam the repository with unnecessary PRs. Make sure to follow the project's [code of conduct](/CODE_OF_CONDUCT.md).
 
-- Go through the [CONTRIBUTING.md](https://github.com/murtazajoo/openSourcer/blob/main/contributing.md) file, where all the guidelines have been mentioned that will guide you to make your contribution.
+- Go through the [CONTRIBUTING.md](https://github.com/murtazajoo/openSourcer/blob/master/contributing.md) file, where all the guidelines have been mentioned that will guide you to make your contribution.
 - Do checkout the [project issue tracker](https://github.com/murtazajoo/openSourcer/issues) section.
 
 ## 🤝 Our Contributors
