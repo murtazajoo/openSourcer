@@ -1,0 +1,26 @@
+name: Greetings
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Send greetings
+        uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          issue-message: |
+            Hello @${{ github.actor }}! Congratulations on creating your first issue! 🎉 We appreciate your contribution and want to assure you that we're on it. We'll do our best to resolve the issue promptly. If you have any additional information or details to share about the issue, please let us know. We're here to help! Thanks again for taking the time to report this issue. We value your feedback and look forward to working together to address it. Best regards, Your Project Team
+          pr-message: |
+            Hey @${{ github.actor }}! Great job on submitting your first pull request! 🎉 We appreciate your contribution and the effort you've put into improving our project. We'll review your changes and provide feedback promptly. Keep up the excellent work! If you have any questions or need further assistance, feel free to ask. We're here to support you! Once again, thank you for your valuable contribution. We look forward to collaborating with you on more pull requests in the future. Best regards, Murtaza Joo
+          footer: |
+            We will promptly review your changes and offer feedback. Keep up the excellent work! Kindly remember to check our [contributing guidelines](https://github.com/murtazajooercontributing.md)
+ 
