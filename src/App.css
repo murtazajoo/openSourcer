@@ -1,0 +1,13 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.shadow-hero {
+  box-shadow: -1px -1px 400px 11vw rgba(178, 0, 214, 0.3);
+  -webkit-box-shadow: -1px -1px 400px 11vw rgba(178, 0, 214, 0.3);
+  -moz-box-shadow: -1px -1px 400px 11vw rgba(178, 0, 214, 0.3);
+}
+
+.active {
+  @apply backdrop-blur-xl bg-[rgba(255,255,255,0.2)] rounded;
+}
