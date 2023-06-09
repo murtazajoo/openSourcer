@@ -14,6 +14,7 @@ interface Data {
   Projects: { name: string; repo_name: string; link: string }[];
 }
 
+// this function converts/changes the format of the projects.json => gives each project it own username
 const convertData = (data: typeof projectsData): Project[] => {
   const projects: Project[] = [];
 
