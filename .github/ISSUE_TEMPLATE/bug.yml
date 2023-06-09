@@ -1,39 +1,37 @@
 name: 🐛 Bug Report
 description: Report a bug in the project
-title: "🐛 Bug:"
+title: "Bug:"
 labels: ["🐛 Bug fix", "👀 status: awaiting review"]
 body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      placeholder: Describe the bug you encountered
+    validations:
+      required: true
 
-type: textarea
-id: bug-description
-attributes:
-label: Bug Description
-placeholder: Describe the bug you encountered
-validations:
-required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      placeholder: Describe what you expected to happen
+    validations:
+      required: true
 
-type: textarea
-id: expected-behavior
-attributes:
-label: Expected Behavior
-placeholder: Describe what you expected to happen
-validations:
-required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      placeholder: Describe what actually happened
+    validations:
+      required: true
 
-type: textarea
-id: actual-behavior
-attributes:
-label: Actual Behavior
-placeholder: Describe what actually happened
-validations:
-required: true
-
-type: checkboxes
-id: terms
-attributes:
-label: "Record"
-options:
-- label: I agree to follow this project's Code of Conduct
-required: true
-
-- label: I want to work on fixing this bug
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Record"
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+        - label: I want to work on fixing this bug
