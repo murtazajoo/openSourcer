@@ -1,0 +1,20 @@
+name: 🔥 Project Addition
+description: Add a new project to the website
+title: "Data: project addition by "
+labels: ["🔥 Project Ignition", "👀 status: awaiting review"]
+body:
+  - type: textarea
+    id: project-add
+    attributes:
+      label: Add a new project to the list
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Record"
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+
+        - label: I want to work on this issue
