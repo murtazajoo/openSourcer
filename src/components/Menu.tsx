@@ -19,11 +19,6 @@ export default function Menu() {
             Docs
           </NavLink>
         </li>
-        <li className="font-saira">
-          <NavLink className="px-2 py-1" to="/contact">
-            Contact
-          </NavLink>
-        </li>
       </ul>
     </nav>
   );
