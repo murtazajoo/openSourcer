@@ -1,0 +1,14 @@
+name: token
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: My Step
+        run: echo ${{ secrets.ACCESS_TOKEN }}
