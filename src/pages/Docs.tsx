@@ -1,9 +1,6 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-// import ForkImage from "./fork.png";
-// import GoToFileImage from "./go-to-file.png";
-
 export default function Docs() {
   return (
     <div className="container mx-auto px-4 py-8 selection:text-yellow-900 selection:bg-purple-300">
@@ -18,12 +15,20 @@ export default function Docs() {
       <h3 className="text-xl my-5 text-blue-300 font-semibold mb-2">
         1. Fork this repository
       </h3>
-      {/* <img src={ForkImage} alt="Fork this repository" className="my-4" /> */}
+      <img
+        src="https://github.com/murtazajoo/openSourcer/assets/98375522/34da207e-ab7b-4279-a672-0f590613bb56"
+        alt="Fork this repository"
+        className="my-4"
+      />
 
       <h3 className="text-xl my-5 text-blue-300 font-semibold mb-2">
         2. Click on 'Go to file'
       </h3>
-      {/* <img src={GoToFileImage} alt="Go to file" className="my-4" /> */}
+      <img
+        src="https://github.com/murtazajoo/openSourcer/assets/98375522/96f1411c-0e23-4e95-afa6-9e8578b99171"
+        alt="Go to file"
+        className="my-4"
+      />
 
       <h3 className="text-xl my-5 text-blue-300 font-semibold mb-2">
         3. Add following code to end of{" "}
