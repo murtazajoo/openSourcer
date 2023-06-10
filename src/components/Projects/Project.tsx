@@ -30,7 +30,7 @@ export default function Project({
           href={link}
           target="_blank"
           rel="noreferrer"
-          className="bg-white  justify-center mt-3 block active:bg-slate-500 items-center text-black py-1 shadow px-4 rounded-full"
+          className="bg-white hover:bg-slate-200 justify-center mt-3 block active:bg-slate-500 items-center text-black py-1 shadow px-4 rounded-full "
         >
           Repository &rarr;
         </a>
