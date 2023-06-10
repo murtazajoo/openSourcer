@@ -1,0 +1,43 @@
+name: 🚀 Enhancement Request
+description: Suggest an enhancement or new feature for the project
+title: "Enhancement:"
+labels: ["🚀 Enhancement", "👀 status: awaiting review"]
+body:
+
+  - type: textarea
+    id: enhancement-description
+    attributes:
+      label: Enhancement Description
+      placeholder: Describe the enhancement or new feature you're suggesting
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: impact-area
+    attributes:
+      label: "Impact Area"
+      options:
+        - label: User Interface
+        - label: Functionality
+        - label: Performance
+        - label: Accessibility
+        - label: Documentation
+        - label: Other (please specify)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      placeholder: Provide any additional details or context for your enhancement request
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Record"
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+         
+        - label: I want to work on this issue
