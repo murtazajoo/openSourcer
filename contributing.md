@@ -4,11 +4,10 @@
 
 #### 1. Fork this repository
 
-![ Fork this repository](https://user-images.githubusercontent.com/88102392/226444075-7d7d28b5-8d88-459a-bb82-38a3f64aaf28.png)
-
+![image](https://github.com/murtazajoo/openSourcer/assets/98375522/34da207e-ab7b-4279-a672-0f590613bb56)
 #### 2. Click on `Go to file`
 
-![Go to file](https://user-images.githubusercontent.com/88102392/226444608-12a2abb9-436c-4843-8893-49029cb4c033.png)
+![image](https://github.com/murtazajoo/openSourcer/assets/98375522/96f1411c-0e23-4e95-afa6-9e8578b99171)
 
 #### 3. Add following code to end of `src/DATA/projects.json`
 
@@ -41,7 +40,7 @@
 1.  Go to preferred folder in your computer and paste the following command after forking our repository (Only one of it if you don't have ssh setup then go with HTTP command)
 
 ```
-git clone https://github.com/<YOUR-USERNAME>/ProjectsHut.git
+git clone https://github.com/<YOUR-USERNAME>/openSourcer.git
 ```
 
 2.  Navigate to the project folder
