@@ -1,6 +1,5 @@
 import Project from "../components/Projects/Project";
 import projectsData from "../DATA/projects.json";
-import { useEffect } from "react";
 
 interface Project {
   username: string;
@@ -14,7 +13,6 @@ interface Data {
   Projects: { name: string; repo_name: string; link: string }[];
 }
 
-// this function converts/changes the format of the projects.json => gives each project it own username
 const convertData = (data: typeof projectsData): Project[] => {
   const projects: Project[] = [];
 
@@ -34,10 +32,6 @@ const convertData = (data: typeof projectsData): Project[] => {
 
 export default function Projects() {
   const allProjects = convertData(projectsData);
-  useEffect(() => {
-    console.log(allProjects);
-  }, [allProjects]);
-
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full max-w-[1200px] px-10 mx-auto">
