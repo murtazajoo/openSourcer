@@ -111,3 +111,18 @@
     ]
   }
 ]
+{
+  "github_username": "Sumukha87",
+  "Projects": [
+    {
+      "link": "https://github.com/Sumukha87/AI-Summery",
+      "name": "AI-Summery",
+      "repo_name":"AI-Summery"
+    },
+    {
+      "link": "https://github.com/Sumukha87/Post-it",
+      "name": "Post-it",
+      "repo_name":"Post-it"
+    }
+  ]
+}
