@@ -36,7 +36,7 @@ export default function Project({
   return (
     <div
       className="max-w-32 min-h-[11rem]  flex flex-col justify-between items-start
-     w-full bg-slate-800 backdrop-blur-3xl shadow rounded p-3 m1"
+     w-full bg-slate-200  dark:bg-slate-800 backdrop-blur-3xl shadow-lg rounded p-3 m1"
     >
       <h1 className="text-xl">{name}</h1>
       <small className="text-gray-500 ">
@@ -54,7 +54,7 @@ export default function Project({
           href={link}
           target="_blank"
           rel="noreferrer"
-          className="bg-white hover:bg-slate-200 justify-center mt-3 block active:bg-slate-500 items-center text-black py-1 shadow px-4 rounded-full "
+          className="bg-white  block hover:bg-slate-200 justify-center mt-3  active:bg-slate-500 items-center duration-300 text-black py-1 shadow px-4 rounded-full "
         >
           Repository &rarr;
         </a>

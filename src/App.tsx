@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className=" bg-gray-900 relative selection:bg-purple-100 selection:text-purple-950 backdrop-blur-3xl min-h-screen font-saira text-white bg-body">
+        <div className="bg-white dark:bg-gray-900 relative selection:bg-purple-100 selection:text-purple-950 backdrop-blur-3xl min-h-screen font-saira dark:text-white text-black bg-body">
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -18,9 +18,9 @@ function App() {
             <Route path="/docs" element={<Docs />} />
             {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
-      <Footer/>
     </>
   );
 }
