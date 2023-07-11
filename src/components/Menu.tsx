@@ -1,7 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
-export default function Menu() {
+type MenuProps = {
+  themeToggler: () => void;
+  theme: string;
+};
+
+export default function Menu({ themeToggler, theme }: MenuProps) {
+  function handleChange() {
+    themeToggler();
+  }
   return (
     <nav className="w-full">
       <ul className="flex justify-evenly items-center ">
@@ -19,6 +28,12 @@ export default function Menu() {
           <NavLink className="px-2 py-1" to="docs">
             Docs
           </NavLink>
+        </li>
+        <li>
+          {/* hreate a toggle btton dark mode light mode*/}
+          <button onClick={handleChange}>
+            {theme === "light" ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
+          </button>
         </li>
         <li className="font-saira">
           <a
