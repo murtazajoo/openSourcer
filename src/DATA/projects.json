@@ -34,6 +34,7 @@
       }
     ]
   },
+  
   {
     "github_username": "Saurav-Pant",
     "Projects": [
@@ -104,5 +105,15 @@
         "link": "https://github.com/sumitkr2000/Weather-App"
       }
     ]
-  }
+  },
+  {
+  "github_username": "YOUR_GITHUB_USERNAME",
+  "Projects": [
+    {
+      "link": "https://github.com/alaminthespecial/little_lemon",
+      "name": "Little Lemon",
+      "repo_name":"little_lemon"
+    }
+  ]
+}
 ]
