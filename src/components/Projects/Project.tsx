@@ -7,10 +7,13 @@ type ProjectProps = {
   name: string;
   link: string;
 };
+
 type RepoData = {
   description: string;
   language: string;
 };
+
+type LanguageInfo = { [key: string] : number };
 
 export default function Project({
   username,
@@ -19,20 +22,41 @@ export default function Project({
   link,
 }: ProjectProps) {
   const [data, setData] = useState<RepoData | null>(null);
-
+  const [languagesData, setLanguagesData] = useState<LanguageInfo | null>(null);
   useEffect(() => {
     function getRepo() {
       fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137`
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}`,
+        {
+          headers: {
+            authorization: "token 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"
+          }
+        }
       )
         .then((res) => res.json())
         .then((result: RepoData) => setData(result));
     }
+    // ?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137
     if (data) return;
     getRepo();
 
+    function getLanguages() {
+      fetch(
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages`,
+        {
+          headers: {
+            authorization: "token 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"
+          }
+        }
+      ).then((res) => res.json()).then((result: LanguageInfo) => {
+        setLanguagesData(result);
+      });
+    }
+    if(languagesData) return;
+    getLanguages();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <div
@@ -50,7 +74,22 @@ export default function Project({
             : "This repository does not have a description available for display at the moment. or The API limit has exceeded"
           : "loading"}
       </p>
-      <div className="w-full flex flex-col items-end justify-end gap-2">
+      
+      <h2 className="pt-5">
+        Languages:
+      </h2>
+
+       <p className="text-sm line-clamp-3 text-gray-400">
+       {
+          languagesData
+            ? Object.entries (languagesData).map(([key]) => {return key}).join(", ") == "message, documentation_url" ? 
+              "No languages found. or The API limit has exceeded" : 
+                Object.entries (languagesData).map(([key]) => {return key}).join(", "): 
+            "loading"
+        }
+       </p>      
+
+      <div className="w-full flex flex-col items-end justify-end gap-2 pt-5">
         <a
           href={link}
           target="_blank"
