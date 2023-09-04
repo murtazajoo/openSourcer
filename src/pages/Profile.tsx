@@ -43,10 +43,10 @@ export default function Profile() {
   return (
     <div className="flex flex-col justify-center items-center w-full max-w-[1200px] px-10 mx-auto">
       <ProfileInfo username={username ? username : "Username not found"} />
-
-      <div className="flex flex-col justify-start items-start w-full pt-10">
-        <h2 className="text-3xl">Projects added:</h2>
-        <ul className="flex flex-col gap-6 w-full pt-2">
+      <canvas className="my-5 bg-gray-200 dark:bg-gray-800 h-1 w-full"></canvas>
+      <div className="flex flex-col justify-start items-start w-full">
+        <h2 className="text-4xl font-bold">Projects added:</h2>
+        <ul className="flex flex-col gap-6 w-full pt-4">
           {userProjects.map((project, index) => {
               return <UserProjects name={project.name} repo_name={project.repo_name} username={username ? username : "Username not found"} key={index} />;
             })

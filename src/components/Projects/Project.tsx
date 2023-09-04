@@ -26,28 +26,16 @@ export default function Project({
   useEffect(() => {
     function getRepo() {
       fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}`,
-        {
-          headers: {
-            authorization: "token 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"
-          }
-        }
-      )
-        .then((res) => res.json())
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137`
+        ).then((res) => res.json())
         .then((result: RepoData) => setData(result));
     }
-    // ?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137
     if (data) return;
     getRepo();
 
     function getLanguages() {
       fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages`,
-        {
-          headers: {
-            authorization: "token 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"
-          }
-        }
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137`
       ).then((res) => res.json()).then((result: LanguageInfo) => {
         setLanguagesData(result);
       });

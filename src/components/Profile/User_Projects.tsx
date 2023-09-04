@@ -22,28 +22,19 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
   useEffect(() => {
     function getRepo() {
       fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}`,
-        {
-          headers: {
-            authorization: "token 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"
-          }
-        }
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137`
+        
       )
         .then((res) => res.json())
         .then((result: RepoData) => setData(result));
     }
-    // ?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137
+
     if (data) return;
     getRepo();
 
     function getLanguages() {
       fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages`,
-        {
-          headers: {
-            authorization: "token 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"
-          }
-        }
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137` 
       ).then((res) => res.json()).then((result: LanguageInfo) => {
         setLanguagesData(result);
       });
@@ -53,15 +44,13 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
     
-
-    
     return(
         <div
         className="max-w min-h-[11rem]  flex flex-col justify-between items-start
                     bg-slate-200  dark:bg-slate-800 backdrop-blur-3xl shadow-lg rounded p-3 m1"
       >
-        <h1 className="text-xl">{name}</h1>
-        <p className="text-sm line-clamp-3 text-gray-400">
+        <h1 className="text-3xl font-medium">{name}</h1>
+        <p className="text-lg line-clamp-3 text-gray-400">
           {data
             ? data.description
               ? data.description
@@ -69,11 +58,11 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
             : "loading"}
         </p>
         
-        <h2 className="pt-5">
+        <h2 className="pt-5 text-2xl font-medium">
           Languages:
         </h2>
   
-         <p className="text-sm line-clamp-3 text-gray-400">
+         <p className="text-lg line-clamp-3 text-gray-400">
          {
             languagesData
               ? Object.entries (languagesData).map(([key]) => {return key}).join(", ") == "message, documentation_url" ? 
@@ -88,7 +77,7 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
             href={link}
             target="_blank"
             rel="noreferrer"
-            className="bg-white  block hover:bg-slate-200 justify-center mt-3  active:bg-slate-500 items-center duration-300 text-black py-1 shadow px-4 rounded-full "
+            className="bg-white  block hover:bg-slate-200 justify-center mt-3  active:bg-slate-500 items-center duration-300 text-black py-2 shadow px-6 rounded-full "
           >
             Repository &rarr;
           </a>
