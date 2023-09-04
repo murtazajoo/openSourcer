@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 type ProjectProps = {
   username: string;
@@ -49,7 +50,7 @@ export default function Project({
             : "This repository does not have a description available for display at the moment. or The API limit has exceeded"
           : "loading"}
       </p>
-      <div className="w-full flex items-end justify-end">
+      <div className="w-full flex flex-col items-end justify-end gap-2">
         <a
           href={link}
           target="_blank"
@@ -58,6 +59,14 @@ export default function Project({
         >
           Repository &rarr;
         </a>
+        <NavLink
+          to={`/profile/${username}`}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline justify-center mt-3 items-center text-teal-700 dark:text-teal-200 font-medium"
+        >
+          See profile
+        </NavLink>
       </div>
     </div>
   );
