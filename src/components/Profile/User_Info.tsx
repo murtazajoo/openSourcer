@@ -34,6 +34,7 @@ export default function ProfileInfo({ username }: UserNameProp) {
   return (
     <div className="flex flex-row justify-center gap-10 items-center sm:items-end w-full">
       {data? data.avatar_url ? <img
+          alt="Profile photo"
           className="sm:w-80 sm:h-80 h-40 w-40 rounded-3xl"
           src={data?.avatar_url}
         /> : <canvas className="bg-gray-200 rounded-3xl sm:w-80 sm:h-80 h-20 w-20"></canvas> : "loading"}
