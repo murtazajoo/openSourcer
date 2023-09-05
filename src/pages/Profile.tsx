@@ -42,7 +42,7 @@ export default function Profile() {
   const userProjects = convertData(projectsData);
 
   return (
-    <div className="flex flex-col justify-start items-start w-full max-w-[1200px] px-10 mx-auto">
+    <div className="flex flex-col justify-start items-start w-full max-w-[1200px] px-10 mx-auto font-saira">
       <a className="flex flex-row justify-center items-center gap-4 mb-4 text-lg hover:underline" href="/projects">
         <FaAngleLeft size={30} />
         Go back to projects
