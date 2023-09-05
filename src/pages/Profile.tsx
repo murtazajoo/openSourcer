@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ProfileInfo from "../components/Profile/User_Info";
 import projectsData from "../DATA/projects.json";
 import UserProjects from "../components/Profile/User_Projects";
+import { FaAngleLeft } from "react-icons/fa";
 
 interface Project {
   repo_name: string;
@@ -41,7 +42,11 @@ export default function Profile() {
   const userProjects = convertData(projectsData);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full max-w-[1200px] px-10 mx-auto">
+    <div className="flex flex-col justify-start items-start w-full max-w-[1200px] px-10 mx-auto">
+      <a className="flex flex-row justify-center items-center gap-4 mb-4 text-lg hover:underline" href="/projects">
+        <FaAngleLeft size={30} />
+        Go back to projects
+      </a>
       <ProfileInfo username={username ? username : "Username not found"} />
       <canvas className="my-5 bg-gray-200 dark:bg-gray-800 h-1 w-full"></canvas>
       <div className="flex flex-col justify-start items-start w-full">

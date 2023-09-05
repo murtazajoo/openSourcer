@@ -33,7 +33,6 @@ export default function ProfileInfo({ username }: UserNameProp) {
   
   return (
     <div className="flex flex-row justify-center gap-10 items-center sm:items-end w-full">
-      
       {data? data.avatar_url ? <img
           className="sm:w-80 sm:h-80 h-40 w-40 rounded-3xl"
           src={data?.avatar_url}
@@ -58,7 +57,7 @@ export default function ProfileInfo({ username }: UserNameProp) {
             <FaShareSquare size={30} />
 
             <RWebShare data={{
-              url: `https://opensourcer.vercel.app/profile/${username}`,
+              url: `\nhttps://opensourcer.vercel.app/profile/${username}`,
               text: `Check out the amazing OpenSourcer projects of @${username}!`,
             }}>
               <a className="hover:underline">Share</a>
@@ -71,5 +70,3 @@ export default function ProfileInfo({ username }: UserNameProp) {
   );
 }
 
-
-//              href={`https://github.com/${username}`}

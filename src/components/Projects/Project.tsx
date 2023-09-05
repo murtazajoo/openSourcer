@@ -88,8 +88,6 @@ export default function Project({
         </a>
         <NavLink
           to={`/profile/${username}`}
-          target="_blank"
-          rel="noreferrer"
           className="hover:underline justify-center mt-3 items-center text-teal-700 dark:text-teal-200 font-medium"
         >
           See profile
