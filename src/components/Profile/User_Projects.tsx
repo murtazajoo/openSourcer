@@ -84,4 +84,5 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
         </div>
       </div>
     );
+    
 }
