@@ -17,7 +17,7 @@ type LanguageInfo = { [key: string] : number };
 export default function UserProjects({name, repo_name, username} : ProjectsData){
   const [data, setData] = useState<RepoData | null>(null);
   const [languagesData, setLanguagesData] = useState<LanguageInfo | null>(null);
-  const link = `https://github.com/${username.trim()}/${repo_name.trim()}`; 
+  const link = `https://github.com/${username.trim()}/${repo_name.trim()}`;
 
   useEffect(() => {
     function getRepo() {
@@ -34,7 +34,7 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
 
     function getLanguages() {
       fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137` 
+        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}/languages?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137`
       ).then((res) => res.json()).then((result: LanguageInfo) => {
         setLanguagesData(result);
       });
@@ -65,12 +65,12 @@ export default function UserProjects({name, repo_name, username} : ProjectsData)
          <p className="text-lg line-clamp-3 text-gray-400">
          {
             languagesData
-              ? Object.entries (languagesData).map(([key]) => {return key}).join(", ") == "message, documentation_url" ? 
-                "No languages found. or The API limit has exceeded" : 
-                  Object.entries (languagesData).map(([key]) => {return key}).join(", "): 
+              ? Object.entries (languagesData).map(([key]) => {return key}).join(", ") == "message, documentation_url" ?
+                "No languages found. or The API limit has exceeded" :
+                  Object.entries (languagesData).map(([key]) => {return key}).join(", "):
               "loading"
           }
-         </p>      
+         </p>
 
         <div className="w-full flex flex-col items-end justify-end gap-2 pt-5">
           <a

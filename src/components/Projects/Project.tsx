@@ -69,12 +69,12 @@ export default function Project({
        <p className="text-sm line-clamp-3 text-gray-400">
        {
           languagesData
-            ? Object.entries (languagesData).map(([key]) => {return key}).join(", ") == "message, documentation_url" ? 
-              "No languages found. or The API limit has exceeded" : 
-                Object.entries (languagesData).map(([key]) => {return key}).join(", "): 
+            ? Object.entries (languagesData).map(([key]) => {return key}).join(", ") == "message, documentation_url" ?
+              "No languages found. or The API limit has exceeded" :
+                Object.entries (languagesData).map(([key]) => {return key}).join(", "):
             "loading"
         }
-       </p>      
+       </p>
 
       <div className="w-full flex flex-col items-end justify-end gap-2 pt-5">
         <a
