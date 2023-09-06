@@ -15,8 +15,6 @@ interface Data {
   Projects: { name: string; repo_name: string; link: string }[];
 }
 
-
-
 export default function Profile() {
   const { username } = useParams();
   const convertData = (data: typeof projectsData): Project[] => {
@@ -57,9 +55,7 @@ export default function Profile() {
             })
           }
         </ul>
-
       </div>
-
     </div>
   );
 }
