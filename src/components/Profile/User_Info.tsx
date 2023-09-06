@@ -69,5 +69,5 @@ export default function ProfileInfo({ username }: UserNameProp) {
       </div>
     </div>
   );
-  
 }
+
