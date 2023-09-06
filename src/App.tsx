@@ -7,25 +7,22 @@ import Docs from "./pages/Docs";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import Profile from "./pages/Profile";
+import AddProjects from './pages/AddProject';
 
 
 function App() {
   const [theme, setTheme] = useState("light");
-  
   const setMode = (mode: string) => {
     window.localStorage.setItem("theme", mode);
     setTheme(mode);
   };
-
   const themeToggler = () => {
     theme === "light" ? setMode("dark") : setMode("light");
   };
-
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme");
     localTheme ? setTheme(localTheme) : setMode("light");
   }, []);
-
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -33,7 +30,6 @@ function App() {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
-
 
   return (
     <BrowserRouter>
@@ -48,9 +44,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/docs" element={<Docs />} />
           <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/add-project" element={<AddProjects/>}/>
         </Routes>
-
-
         <Footer />
       </div>
     </BrowserRouter>

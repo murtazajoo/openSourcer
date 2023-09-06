@@ -29,6 +29,7 @@ export default function Menu({ themeToggler, theme }: MenuProps) {
             Docs
           </NavLink>
         </li>
+
         <li>
           {/* hreate a toggle btton dark mode light mode*/}
           <button onClick={handleChange}>
@@ -45,6 +46,14 @@ export default function Menu({ themeToggler, theme }: MenuProps) {
             <FaGithub size={30} />
           </a>
         </li>
+
+        <li className="font-saira text-white">
+          {/* Button to navigate to the add project page */}
+          <NavLink to="add-project" className="bg-purple-500 px-2 py-1 rounded-lg">
+            Add project
+          </NavLink>
+        </li>
+
       </ul>
     </nav>
   );
