@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Docs from "./pages/Docs";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
+import Profile from "./pages/Profile";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -42,6 +43,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/docs" element={<Docs />} />
+            <Route path="/profile/:username" element={<Profile />} />
             {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
           <Footer />
