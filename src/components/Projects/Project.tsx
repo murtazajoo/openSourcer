@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { GetRepoData, GetUserDetails } from "../../DATA/get_user_details";
+import { useAppContext } from "../../utils/Context";
+import { ActionTypes } from "../../utils/Reducers";
 
 type ProjectProps = {
   username: string;
   repo_name: string;
   name: string;
   link: string;
-};
-type RepoData = {
-  description: string;
-  language: string;
 };
 
 export default function Project({
@@ -17,39 +17,60 @@ export default function Project({
   name,
   link,
 }: ProjectProps) {
-  const [data, setData] = useState<RepoData | null>(null);
+  const { state, dispatch } = useAppContext();
+  const repoData = state.repoData;
+  const userDetails = state.userDetails;
 
   useEffect(() => {
-    function getRepo() {
-      fetch(
-        `https://api.github.com/repos/${username.trim()}/${repo_name.trim()}?client_id=ec1594e91cfa6b4281cb&client_secret=02388e8e126c1f3d96d7b2a59350a3620c08c137`
-      )
-        .then((res) => res.json())
-        .then((result: RepoData) => setData(result));
+    async function getRepoData() {
+      try {
+        const result = await GetRepoData(username, repo_name);
+        dispatch({ type: ActionTypes.SET_REPO_DATA, payload: result });
+      } catch (error) {
+        throw new Error("Error while fetching the repos data");
+      }
     }
-    if (data) return;
-    getRepo();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getRepoData();
   }, []);
+
+  function fetchUserDetails() {
+    async function getUserDetails() {
+      try {
+        const result = await GetUserDetails(username);
+        dispatch({ type: ActionTypes.SET_DETAILS, payload: result });
+      } catch {
+        throw new Error("Failed to load user details");
+      }
+    }
+    getUserDetails();
+  }
 
   return (
     <div
       className="max-w-32 min-h-[11rem]  flex flex-col justify-between items-start
      w-full bg-slate-200  dark:bg-slate-800 backdrop-blur-3xl shadow-lg rounded p-3 m1"
     >
+      <p>{userDetails?.name}</p>
       <h1 className="text-xl">{name}</h1>
       <small className="text-gray-500 ">
         @{username}/{repo_name} <br />
       </small>
       <p className="text-sm line-clamp-3 text-gray-400">
-        {data
-          ? data.description
-            ? data.description
-            : "This repository does not have a description available for display at the moment. or The API limit has exceeded"
+        {repoData
+          ? repoData.description
+            ? repoData.description
+            : "The repo description is not available or the API limit has exceeded"
           : "loading"}
       </p>
-      <div className="w-full flex items-end justify-end">
+      <h2 className="pt-5">Main language:</h2>
+      <p className="text-sm line-clamp-3 text-gray-400">
+        {repoData
+          ? repoData.language
+            ? repoData.language
+            : "The language is not available or the API limit has exceeded"
+          : "loading"}
+      </p>
+      <div className="w-full flex flex-col items-end justify-end gap-2 pt-5">
         <a
           href={link}
           target="_blank"
@@ -58,6 +79,13 @@ export default function Project({
         >
           Repository &rarr;
         </a>
+        <NavLink
+          onClick={fetchUserDetails}
+          to={`/profile/${username}`}
+          className="hover:underline justify-center mt-3 items-center text-teal-700 dark:text-teal-200 font-medium"
+        >
+          See profile
+        </NavLink>
       </div>
     </div>
   );
