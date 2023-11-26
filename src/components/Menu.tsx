@@ -12,30 +12,20 @@ export default function Menu({ themeToggler, theme }: MenuProps) {
     themeToggler();
   }
   return (
-    <nav className="w-full">
-      <ul className="flex justify-evenly items-center ">
-        <li className="font-saira">
+      <>
           <NavLink className="px-2 py-1" to="/">
             Home
           </NavLink>
-        </li>
-        <li className="font-saira">
           <NavLink className="px-2 py-1" to="/projects">
             Projects
           </NavLink>
-        </li>
-        <li className="font-saira">
           <NavLink className="px-2 py-1" to="docs">
             Docs
           </NavLink>
-        </li>
-        <li>
           {/* hreate a toggle btton dark mode light mode*/}
           <button onClick={handleChange}>
             {theme === "light" ? <BsFillMoonStarsFill /> : <BsFillSunFill />}
           </button>
-        </li>
-        <li className="font-saira">
           <a
             href="https://github.com/murtazajoo/openSourcer"
             className="px-2 py-1"
@@ -44,8 +34,6 @@ export default function Menu({ themeToggler, theme }: MenuProps) {
           >
             <FaGithub size={30} />
           </a>
-        </li>
-      </ul>
-    </nav>
+      </>
   );
 }
