@@ -21,6 +21,8 @@ body::-webkit-scrollbar {
   
 .mobile-menu.open {     
       max-height: 500px;
-      background-color: white;
 }
 
+.invert {
+  filter: invert(1);
+}
