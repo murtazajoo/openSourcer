@@ -11,3 +11,18 @@ body::-webkit-scrollbar {
 .active {
   @apply backdrop-blur-xl bg-purple-100 dark:bg-[rgba(255,255,255,0.2)] rounded;
 }
+
+.mobile-menu {
+      display: none;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-in-out;
+}
+  
+.mobile-menu.open {     
+      max-height: 500px;
+}
+
+.invert {
+  filter: invert(1);
+}
